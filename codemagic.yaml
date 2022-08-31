@@ -17,7 +17,7 @@ workflows:
         #   - other
         vars:
           XCODE_WORKSPACE: "native-ios-app.xcworkspace" # <-- Put the name of your workspace here.
-          XCODE_SCHEME: "native-ios-app" # <-- Put the name of your scheme here.
+          XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
           BUNDLE_ID: "com.felis.native-ios-app" # <-- Put your Bundle Id here.
           # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
         xcode: 13.3.1
@@ -61,11 +61,11 @@ workflows:
         - name: Firebase 
           script: |
             xcodebuild -workspace native_ios_app.xcworkspace \
-            -scheme native-ios-app \
+            -scheme native-ios \
             -derivedDataPath ./build/ios_integ \
             -sdk iphoneos build-for-testing
             cd ./build/ios_integ/Build/Products
-            zip -r "ios_tests.zip" "Debug-iphoneos" "native-ios-app_iphoneos15.4-arm64.xctestrun"
+            zip -r "ios_tests.zip" "Debug-iphoneos" "native-ios_iphoneos15.4-arm64.xctestrun"
 #         - name: Build ipa for distribution
 #           script: |
 #             xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
