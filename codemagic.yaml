@@ -46,8 +46,8 @@ workflows:
             keychain initialize
         - name: Fetch signing files
           script: |
-            app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_DEVELOPMENT --create
-            app-store-connect fetch-signing-files com.mars.native-ios-appUITests.xctrunner --type IOS_APP_DEVELOPMENT --create
+            app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_ADHOC --create
+#           app-store-connect fetch-signing-files com.mars.native-ios-appUITests.xctrunner --type IOS_APP_DEVELOPMENT --create
         - name: Use system default keychain
           script: |
             keychain add-certificates
