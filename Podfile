@@ -17,10 +17,10 @@ target 'native_ios_app (macOS)' do
 
 end
 
-target 'RunnerTests' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+# target 'RunnerTests' do
+#   # Comment the next line if you don't want to use dynamic frameworks
+#   use_frameworks!
 
-  # Pods for native_ios_app (macOS)
-  inherit! :search_paths
-end
+#   # Pods for native_ios_app (macOS)
+#   inherit! :search_paths
+# end
