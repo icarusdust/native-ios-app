@@ -40,7 +40,7 @@ workflows:
       scripts:
         - name: 
           script: |
-             swift package init
+            #  swift package init
              swift build
              swift package resolve
         - name: Pod inst
