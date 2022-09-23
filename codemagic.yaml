@@ -72,7 +72,9 @@ workflows:
 #             zip -r "ios_tests.zip" "Debug-iphoneos" "native-ios_iphoneos15.4-arm64.xctestrun"
         - name: Build ipa for distribution
           script: |
-            xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGNING_REQUIRED=Yes CODE_SIGNING_ALLOWED=No
+            xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+#          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGNING_REQUIRED=Yes CODE_SIGNING_ALLOWED=No
+
 #         - name: Test Lab upload
 #           script: |
 #                 echo $GCLOUD_KEY_FILE > ./gcloud_key_file.json
