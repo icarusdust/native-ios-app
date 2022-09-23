@@ -38,6 +38,8 @@ workflows:
 #             include: true
 #             source: true
       scripts:
+        - name: 
+          script: swift package resolve
         - name: Pod inst
           script: |
               pod install
