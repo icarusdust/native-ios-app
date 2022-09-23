@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3904F06228DDB5B70003D4EB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 3904F06128DDB5B70003D4EB /* Algorithms */; };
 		39EBD42A28BF6DFF0073128E /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EBD42928BF6DFF0073128E /* Tests_macOS.swift */; };
 		39EBD42C28BF6DFF0073128E /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EBD42B28BF6DFF0073128E /* Tests_macOSLaunchTests.swift */; };
 		39EBD42D28BF6DFF0073128E /* native_ios_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EBD40528BF6DFE0073128E /* native_ios_appApp.swift */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3904F06228DDB5B70003D4EB /* Algorithms in Frameworks */,
 				7224A74B25ECD7853F32BDE0 /* Pods_native_ios_app__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +216,9 @@
 			dependencies = (
 			);
 			name = "native_ios_app (iOS)";
+			packageProductDependencies = (
+				3904F06128DDB5B70003D4EB /* Algorithms */,
+			);
 			productName = "native_ios_app (iOS)";
 			productReference = 39EBD40C28BF6DFF0073128E /* native_ios_app.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +312,9 @@
 				Base,
 			);
 			mainGroup = 39EBD3FF28BF6DFE0073128E;
+			packageReferences = (
+				3904F06028DDB5B70003D4EB /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 39EBD40D28BF6DFF0073128E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -808,6 +816,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3904F06028DDB5B70003D4EB /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3904F06128DDB5B70003D4EB /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3904F06028DDB5B70003D4EB /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39EBD40028BF6DFE0073128E /* Project object */;
 }
