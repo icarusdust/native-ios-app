@@ -40,7 +40,6 @@ workflows:
       scripts:
         - name: 
           script: |
-             swift package init
              xcodebuild -resolvePackageDependencies
         - name: Pod inst
           script: |
