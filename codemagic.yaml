@@ -21,7 +21,7 @@ workflows:
 #           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
-          SLACK_TOKEN: "xoxe.xoxp-1-Mi0yLTQ2NzU3MzY2NDMtMjE5MTg1NjUzNjYxMC00MTMwMzIxNTg1NzE2LTQxMjE0ODAyMjAyNDYtZWI4OTUyMmNmN2JiNDYxZDU1NWZkMTZjNWI2YWQ1MTMyYzMyZGMxYmYyZWE1ZDQ5NmYyYWY1MzAxMmNjMjdlOA"
+          SLACK_TOKEN: "xoxe.xoxp-1-Mi0yLTQ2NzU3MzY2NDMtMjE5MTg1NjUzNjYxMC00MTMwMzIxNTg1NzE2LTQxNTE4MDEwMjM5MjAtMjc5MzBlODU0NTBjNDIyMzkzYmQ0NDRhMzI5YzQyY2RlMzUwMDIwMThhM2IxNWRlNGIyNGRkODFhZmZkNmIxZA"
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
         xcode: latest
