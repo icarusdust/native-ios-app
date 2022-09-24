@@ -7,6 +7,7 @@ workflows:
            - ios
            - firebase_creds
            - firebase
+           - slack
         # # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
         #   - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
         #     # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here 
@@ -21,7 +22,7 @@ workflows:
 #           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
-          SLACK_TOKEN: "xoxb-463289325511-4151832623296-IJIIPErm9bd4yGMKbTkCU7EE"
+ 
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
         xcode: latest
