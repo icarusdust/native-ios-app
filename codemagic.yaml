@@ -21,6 +21,7 @@ workflows:
 #           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
+          SLACK_TOKEN: "xoxe.xoxp-1-Mi0yLTQ2NzU3MzY2NDMtMjE5MTg1NjUzNjYxMC00MTMwMzIxNTg1NzE2LTQxMjEyNTkwNjY2OTQtMmJiMmFhMGJiZGI5YzZlNzAzYzZhZjQ2MjIyYWEwMTVlYWE1NDVhNGExZTA5YWNmMWUwNmIzMjhhODQzMjJmOA"
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
         xcode: latest
@@ -94,7 +95,20 @@ workflows:
         - build/ios/ipa/*.ipa
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
-#       publishing:
+      publishing:
+           scripts:
+             - name: Slack publishing
+               script: |
+                    set -e
+                    set -x
+                    theLink=$(echo $CM_ARTIFACT_LINKS | jq .[0].url)
+                    curl -d "text=Hi, please check your email. $theLink" -d "channel={test_channel}" -H "Authorization: Bearer $SLACK_TOKEN" -X POST https://slack.com/api/chat.postMessage
+#             slack:
+#                 channel: '#builds'
+#                 notify_on_build_start: true    # To receive a notification when a build starts
+#                 notify:
+#                   success: false               # To not receive a notification when a build succeeds
+#                   failure: false  
 #         firebase:
 #             firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
 #             ios:
