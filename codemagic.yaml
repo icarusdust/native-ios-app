@@ -103,7 +103,7 @@ workflows:
                     set -e
                     set -x
                     theLink=$(echo $CM_ARTIFACT_LINKS | jq .[0].url)
-                    curl -d "text=Hi, please check your email. $theLink" -d "channel=#slack_test" -H "Authorization: Bearer $SLACK_TOKEN" -X POST https://slack.com/api/chat.postMessage
+                    curl -d "text=Hi, please check your email. $theLink" -d "channel=slack_api" -H "Authorization: Bearer $SLACK_TOKEN" -X POST https://slack.com/api/chat.postMessage
 #             slack:
 #                 channel: '#builds'
 #                 notify_on_build_start: true    # To receive a notification when a build starts
