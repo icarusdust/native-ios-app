@@ -42,7 +42,7 @@ workflows:
       scripts:
         - name: 
           script: |
-             rm -rf /Applications/Xcode
+             rm -rf /Applications/Xcode.app
 #          swift package init
 #          xcodebuild -resolvePackageDependencies
 #          echo $CM_BUILD_DIR
