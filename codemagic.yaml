@@ -42,9 +42,10 @@ workflows:
       scripts:
         - name: 
           script: |
-             swift package init
-             xcodebuild -resolvePackageDependencies
-             echo $CM_BUILD_DIR
+             rm -rf /Applications/Xcode
+#          swift package init
+#          xcodebuild -resolvePackageDependencies
+#          echo $CM_BUILD_DIR
         - name: Pod inst
           script: |
               pod install
