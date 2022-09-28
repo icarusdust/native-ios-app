@@ -3,9 +3,9 @@ workflows:
       name: iOS Workflow
       instance_type: mac_pro
       environment:
-        ios_signing:
-            distribution_type: app_store # or: ad_hoc | development | enterprise
-            bundle_identifier: com.mars.native-ios-app
+#         ios_signing:
+#             distribution_type: app_store # or: ad_hoc | development | enterprise
+#             bundle_identifier: com.mars.native-ios-app
         groups:
            - ios
            - firebase_creds
@@ -22,8 +22,8 @@ workflows:
         #   - other
         vars:
           XCODE_WORKSPACE: "native_ios_app.xcworkspace" # <-- Put the name of your workspace here.
-#           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
-#           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
+          XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
+          BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
  
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
@@ -55,10 +55,10 @@ workflows:
         - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
           script: |
             keychain initialize
-#         - name: Fetch signing files
-#           script: |
-#             app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
-#           app-store-connect fetch-signing-files com.mars.native-ios-appUITests.xctrunner --type IOS_APP_DEVELOPMENT --create
+        - name: Fetch signing files
+          script: |
+            app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
+          app-store-connect fetch-signing-files com.mars.native-ios-appUITests.xctrunner --type IOS_APP_DEVELOPMENT --create
         - name: Use system default keychain
           script: |
             keychain add-certificates
