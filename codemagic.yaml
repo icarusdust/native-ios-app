@@ -3,9 +3,9 @@ workflows:
       name: iOS Workflow
       instance_type: mac_mini_m1
       environment:
-#         ios_signing:
-#             distribution_type: app_store # or: ad_hoc | development | enterprise
-#             bundle_identifier: com.mars.native-ios-app
+        ios_signing:
+            distribution_type: app_store # or: ad_hoc | development | enterprise
+            bundle_identifier: com.mars.native-ios-app
         groups:
            - ios
            - firebase_creds
