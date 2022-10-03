@@ -1,6 +1,6 @@
 workflows:
     ios_workflow:
-      name: iOS Workflow
+      name: ios_workflow
       instance_type: mac_mini_m1
       environment:
         ios_signing:
