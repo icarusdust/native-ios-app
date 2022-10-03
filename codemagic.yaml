@@ -1,5 +1,5 @@
 workflows:
-    ios-workflow:
+    ios_workflow:
       name: iOS Workflow
       instance_type: mac_mini_m1
       environment:
@@ -100,7 +100,13 @@ workflows:
         - build/ios/ipa/*.ipa
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
-#       publishing:
+      publishing:
+          email:
+            recipients:
+              - nihal@nevercode.io
+            notify:
+              success: true
+              failure: true
 #            scripts:
 #              - name: Slack publishing
 #                script: |
