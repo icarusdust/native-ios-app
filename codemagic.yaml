@@ -87,7 +87,7 @@ workflows:
 #          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGNING_REQUIRED=Yes CODE_SIGNING_ALLOWED=No
         - name: Uploading to BrowserStack App Live environment
           script: |
-            curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@build/ios/ipa/native_ios_app.ipa"
+            curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@/home/builder/clone/build/ios/ipa/native_ios_app.ipa"
 
 #         - name: Test Lab upload
 #           script: |
