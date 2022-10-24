@@ -7,7 +7,7 @@ workflows:
 #             distribution_type: app_store # or: ad_hoc | development | enterprise
 #             bundle_identifier: com.mars.native-ios-app
         ios_signing:
-          provisioning_profile:
+          provisioning_profiles:
             - ios_profile
           certificates:
             - ios_cert
