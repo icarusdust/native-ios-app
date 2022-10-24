@@ -3,9 +3,9 @@ workflows:
       name: ios_workflow
       instance_type: mac_mini_m1
       environment:
-        ios_signing:
-            distribution_type: app_store # or: ad_hoc | development | enterprise
-            bundle_identifier: com.mars.native-ios-app
+#         ios_signing:
+#             distribution_type: app_store # or: ad_hoc | development | enterprise
+#             bundle_identifier: com.mars.native-ios-app
         groups:
            - ios
            - firebase_creds
@@ -23,7 +23,7 @@ workflows:
         vars:
           XCODE_WORKSPACE: "native_ios_app.xcworkspace" # <-- Put the name of your workspace here.
           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
-          BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
+          BUNDLE_ID: "com.mars.native-ios-app.com" # <-- Put your Bundle Id here.
           XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
  
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
