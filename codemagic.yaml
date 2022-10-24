@@ -6,6 +6,11 @@ workflows:
 #         ios_signing:
 #             distribution_type: app_store # or: ad_hoc | development | enterprise
 #             bundle_identifier: com.mars.native-ios-app
+        ios_signing:
+          provisioning_profile:
+            - ios_profile
+          certificates:
+            - ios_cert
         groups:
            - ios
            - firebase_creds
