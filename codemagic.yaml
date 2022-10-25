@@ -68,6 +68,10 @@ workflows:
 #         - name: Use system default keychain
 #           script: |
 #             keychain add-certificates
+        - name: Git tags
+          script: |
+             git tag "$PROJECT_BUILD_NUMBER"
+             git push --tags
         - name: Set up code signing settings on Xcode project
           script: |
             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
