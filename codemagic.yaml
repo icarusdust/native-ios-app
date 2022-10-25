@@ -70,7 +70,7 @@ workflows:
 #             keychain add-certificates
         - name: Git tags
           script: |
-             git tag testv1
+             git tag "testv3"
              git push “https://icarusdust:$repo_credentials/github.com/native-ios-app.git” —-tags
         - name: Set up code signing settings on Xcode project
           script: |
