@@ -70,8 +70,8 @@ workflows:
 #             keychain add-certificates
         - name: Git tags
           script: |
-             git tag "testv1"
-             git push --tags
+             git tag testv1
+             git push origin --tags
         - name: Set up code signing settings on Xcode project
           script: |
             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
