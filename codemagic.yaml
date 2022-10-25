@@ -71,7 +71,7 @@ workflows:
         - name: Git tags
           script: |
              gh auth login --with-token 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
-             git tag "$PROJECT_BUILD_NUMBER"
+             git tag "testv1"
              git push --tags
         - name: Set up code signing settings on Xcode project
           script: |
