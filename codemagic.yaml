@@ -71,7 +71,7 @@ workflows:
         - name: Git tags
           script: |
              git tag testv3
-             git push origin “https://icarusdust:$repo_credentials/github.com/native-ios-app.git” —-tags
+             git push https://$repo_credentials@github.com/icarusdust/native-ios-app.git
         - name: Set up code signing settings on Xcode project
           script: |
             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
