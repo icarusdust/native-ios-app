@@ -72,7 +72,7 @@ workflows:
         - name: Git tags
           script: |
              cd $CM_BUILD_DIR
-             git remote set-url origin "https://$ACCESS_TOKEN@github.com/icarusdust/native-ios-app.git"
+             git remote set-url origin "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git"      
              git tag "testv1"
              git push --tags 
  
