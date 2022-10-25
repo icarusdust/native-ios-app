@@ -71,8 +71,9 @@ workflows:
 #             keychain add-certificates
         - name: Git tags
           script: |
+             git clone https://$ACCESS_TOKEN@github.com/icarusdust/native-ios-app.git
              git tag testv3
-             git push https://$ACCESS_TOKEN@github.com/icarusdust/native-ios-app.git --tags
+             git push --tags
         - name: Set up code signing settings on Xcode project
           script: |
             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
