@@ -71,10 +71,8 @@ workflows:
 #             keychain add-certificates
         - name: Git tags
           script: |
-             cd $CM_BUILD_DIR
-             git remote set-url origin "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git"      
-             git tag "testv1"
-             git push --tags 
+             git tag "test444"
+             git push "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git" --tags 
  
         - name: Set up code signing settings on Xcode project
           script: |
