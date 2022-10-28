@@ -35,7 +35,7 @@ workflows:
  
 #           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
           # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
-        xcode: 13.4.1
+        xcode: 11
         cocoapods: default
       cache:
            cache_paths:
@@ -74,9 +74,9 @@ workflows:
              git tag "test444"
              git push "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git" --tags 
  
-#         - name: Set up code signing settings on Xcode project
-#           script: |
-#             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
+        - name: Set up code signing settings on Xcode project
+          script: |
+            xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
 #         - name: Increment build number
 #           script: |
 #             #!/bin/sh
@@ -97,13 +97,9 @@ workflows:
           script: |
             xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --archive-flags "-destination 'generic/platform=iOS'  CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO"
 #          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGNING_REQUIRED=Yes CODE_SIGNING_ALLOWED=No
-        - name: Uploading to BrowserStack App Live environment
-          script: |
-            curl -p "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@/Users/builder/clone/build/ios/ipa/native_ios_app.ipa"
-
-        - name: Set up code signing settings on Xcode project
-          script: |
-            xcode-project use-profile --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
+#         - name: Uploading to BrowserStack App Live environment
+#           script: |
+#             curl -p "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@/Users/builder/clone/build/ios/ipa/native_ios_app.ipa"
 #         - name: Test Lab upload
 #           script: |
 #                 echo $GCLOUD_KEY_FILE > ./gcloud_key_file.json
