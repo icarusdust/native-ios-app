@@ -76,7 +76,7 @@ workflows:
  
         - name: Set up code signing settings on Xcode project
           script: |
-            xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
+            xcode-project use-profile --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
 #         - name: Increment build number
 #           script: |
 #             #!/bin/sh
@@ -113,6 +113,7 @@ workflows:
 #                 --timeout 10m
       artifacts:
         - build/ios/ipa/*.ipa
+        - /tmp/xcodebuild_logs/*.log
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
 #       publishing:
