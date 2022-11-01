@@ -9,7 +9,6 @@ workflows:
         ios_signing:
           provisioning_profiles:
             - ios_profile
-            - extension_profile
           certificates:
             - ios_cert
         groups:
