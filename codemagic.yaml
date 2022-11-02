@@ -95,6 +95,9 @@ workflows:
         - name: Build ipa for distribution
           script: |
             xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --archive-flags "-destination 'generic/platform=iOS'  CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO"
+        - name: Rename binary
+          script: |
+             mv build/ios/ipa/native_ios_app.ipa build/ios/ipa/bullet.ipa
 #          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGNING_REQUIRED=Yes CODE_SIGNING_ALLOWED=No
 #         - name: Uploading to BrowserStack App Live environment
 #           script: |
