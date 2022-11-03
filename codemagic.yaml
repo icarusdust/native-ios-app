@@ -68,10 +68,10 @@ workflows:
 #         - name: Use system default keychain
 #           script: |
 #             keychain add-certificates
-        - name: Git tags
-          script: |
-             git tag "test444"
-             git push "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git" --tags 
+#         - name: Git tags
+#           script: |
+#              git tag "test444"
+#              git push "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git" --tags 
  
         - name: Set up code signing settings on Xcode project
           script: |
