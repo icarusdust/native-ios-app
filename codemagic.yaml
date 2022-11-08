@@ -123,7 +123,7 @@ workflows:
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
       publishing:
-       script:
+       scripts:
          - name: Status check
            script: |
                 if [  -f ~/SUCCESS ] ; then
