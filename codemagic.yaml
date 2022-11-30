@@ -2,40 +2,6 @@ workflows:
     ios-workflow:
       name: ios_workflow
       instance_type: mac_pro
-      environment:
-#         ios_signing:
-#             distribution_type: app_store # or: ad_hoc | development | enterprise
-#             bundle_identifier: com.mars.native-ios-app
-        ios_signing:
-          provisioning_profiles:
-            - ios_profile
-          certificates:
-            - ios_cert
-        groups:
-           - ios
-           - firebase_creds
-           - firebase
-           - slack
-           - repo_credentials
-        # # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
-        #   - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
-        #     # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here 
-        #     # APP_STORE_CONNECT_KEY_IDENTIFIER <-- Put your App Store Connect Key Identifier here 
-        #     # APP_STORE_CONNECT_PRIVATE_KEY <-- Put your App Store Connect Private Key here
-        #     # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
-        #     # https://appstoreconnect.apple.com/access/api
-        #   - certificate_credentials # <-- (CERTIFICATE_PRIVATE_KEY - Put your Certificate Private Key here)
-        #   - other
-        vars:
-          XCODE_WORKSPACE: "native_ios_app.xcworkspace" # <-- Put the name of your workspace here.
-#           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
-#           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
-          XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
- 
-#           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
-          # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
-        xcode: latest
-        cocoapods: default
       cache:
            cache_paths:
                - $HOME/Library/Caches/CocoaPods
@@ -117,6 +83,41 @@ workflows:
 #                 --device model=iphone11pro,version=14.7,locale=en_US,orientation=portrait \
 #                 --xcode-version=13.3.1 \
 #                 --timeout 10m
+     
+      environment:
+#         ios_signing:
+#             distribution_type: app_store # or: ad_hoc | development | enterprise
+#             bundle_identifier: com.mars.native-ios-app
+        ios_signing:
+          provisioning_profiles:
+            - ios_profile
+          certificates:
+            - ios_cert
+        groups:
+           - ios
+           - firebase_creds
+           - firebase
+           - slack
+           - repo_credentials
+        # # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+        #   - app_store_credentials # <-- (APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_IDENTIFIER, APP_STORE_CONNECT_PRIVATE_KEY)
+        #     # APP_STORE_CONNECT_ISSUER_ID <-- Put your App Store Connect Issuer Id here 
+        #     # APP_STORE_CONNECT_KEY_IDENTIFIER <-- Put your App Store Connect Key Identifier here 
+        #     # APP_STORE_CONNECT_PRIVATE_KEY <-- Put your App Store Connect Private Key here
+        #     # See the following link for more details - https://docs.codemagic.io/code-signing-yaml/signing-ios/
+        #     # https://appstoreconnect.apple.com/access/api
+        #   - certificate_credentials # <-- (CERTIFICATE_PRIVATE_KEY - Put your Certificate Private Key here)
+        #   - other
+        vars:
+          XCODE_WORKSPACE: "native_ios_app.xcworkspace" # <-- Put the name of your workspace here.
+#           XCODE_SCHEME: "native_ios_app" # <-- Put the name of your scheme here.
+#           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
+          XCODE_SCHEME: "native-ios" # <-- Put the name of your scheme here.
+ 
+#           BUNDLE_ID: "com.mars.native-ios-app" # <-- Put your Bundle Id here.
+          # APP_STORE_APP_ID: 1555555551 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
+        xcode: latest
+        cocoapods: default
       artifacts:
         - build/ios/ipa/*.ipa
 #         - build/ios/ipa/bullet.ipa
