@@ -101,7 +101,7 @@ workflows:
             - ios_profile
           certificates:
             - ios_cert
-#         <<: *automatic_ios_signing
+        <<: *automatic_ios_signing
         groups:
            - ios
            - firebase_creds
