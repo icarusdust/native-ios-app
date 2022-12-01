@@ -3,12 +3,7 @@ definitions:
     automatic_ios_signing: &automatic_ios_signing
       groups:
         - test
-
-
-
-
-
-  workflows:
+workflows:
     ios-workflow:
       name: ios_workflow
       instance_type: mac_pro
