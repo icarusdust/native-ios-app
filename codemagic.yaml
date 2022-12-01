@@ -8,7 +8,7 @@ definitions:
 
 
 
- workflows:
+  workflows:
     ios-workflow:
       name: ios_workflow
       instance_type: mac_pro
