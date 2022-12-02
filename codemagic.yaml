@@ -6,7 +6,7 @@
 workflows:
     ios-workflow:
       name: ios_workflow
-#       instance_type: mac_mini_m1
+      instance_type: mac_mini_m1
       environment:
 #         ios_signing:
 #             distribution_type: app_store # or: ad_hoc | development | enterprise
@@ -46,15 +46,15 @@ workflows:
            cache_paths:
                - $HOME/Library/Caches/CocoaPods
          
-      triggering:
-        events:
-          - push
-      when:
-          changeset:
-            includes:
-              - 'scripts'
-#             excludes:
-#               - '**/*.md'
+#       triggering:
+#         events:
+#           - push
+#       when:
+#           changeset:
+#             includes:
+#               - 'scripts'
+# #             excludes:
+# #               - '**/*.md'
       scripts:
 #         - name: 
 #           script: |
