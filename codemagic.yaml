@@ -49,10 +49,6 @@ workflows:
       triggering:
         events:
           - push
-        branch_patterns:
-          - pattern: '*'
-            include: true
-            source: true
       when:
           changeset:
             includes:
