@@ -53,6 +53,10 @@ workflows:
           - pattern: '*'
             include: true
             source: true
+      when:
+          changeset:
+            includes:
+              - 'ios/'
       scripts:
 #         - name: 
 #           script: |
