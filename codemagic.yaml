@@ -52,7 +52,9 @@ workflows:
       when:
           changeset:
             includes:
-              - 'scripts/'
+              - '.'
+            excludes:
+              - '**/*.md'
       scripts:
 #         - name: 
 #           script: |
