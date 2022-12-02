@@ -1,9 +1,3 @@
-//
-//  native_ios_appUITests.swift
-//  native_ios_appUITests
-//
-//  Created by Niall on 31.08.2022.
-//
 
 import XCTest
 
