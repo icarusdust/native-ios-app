@@ -56,7 +56,7 @@ workflows:
       when:
           changeset:
             includes:
-              - 'ios/'
+              - 'RunnerTest/'
       scripts:
 #         - name: 
 #           script: |
