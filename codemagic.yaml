@@ -11,13 +11,6 @@ workflows:
 #         ios_signing:
 #             distribution_type: app_store # or: ad_hoc | development | enterprise
 #             bundle_identifier: com.mars.native-ios-app
-      triggering:
-        events:
-          - push
-        branch_patterns:
-          - pattern: '*'
-            include: true
-            source: true
        
         ios_signing:
           provisioning_profiles:
@@ -52,15 +45,14 @@ workflows:
       cache:
            cache_paths:
                - $HOME/Library/Caches/CocoaPods
-#       triggering:
-#         events:
-#           - push
-#           - tag
-#           - pull_request
-#         branch_patterns:
-#           - pattern: 'develop'
-#             include: true
-#             source: true
+         
+      triggering:
+        events:
+          - push
+        branch_patterns:
+          - pattern: '*'
+            include: true
+            source: true
       scripts:
 #         - name: 
 #           script: |
