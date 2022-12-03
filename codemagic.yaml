@@ -46,15 +46,15 @@ workflows:
            cache_paths:
                - $HOME/Library/Caches/CocoaPods
          
-#       triggering:
-#         events:
-#           - push
-#       when:
-#           changeset:
-#             includes:
-#               - 'scripts'
-# #             excludes:
-# #               - '**/*.md'
+      triggering:
+        events:
+          - push
+      when:
+          changeset:
+            includes:
+              - 'scripts'
+            excludes:
+              - '**/*.md'
       scripts:
 #         - name: 
 #           script: |
