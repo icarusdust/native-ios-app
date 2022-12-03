@@ -51,8 +51,8 @@ workflows:
           - push
       when:
           changeset:
-            includes:
-              - 'scripts'
+#             includes:
+#               - 'scripts'
             excludes:
               - '**/*.md'
       scripts:
