@@ -134,7 +134,7 @@ workflows:
         - /tmp/xcodebuild_logs/*.log
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
-#       publishing:
+      publishing:
 #        scripts:
 #          - name: Status check
 #            script: |
@@ -143,9 +143,9 @@ workflows:
 #                 else
 #                   echo "Failure"
 #                 fi
-#           email:
-#             recipients:
-#               - nihal@nevercode.io
+          email:
+            recipients:
+              - nihal@nevercode.io
 #             notify:
 #               success: true
 #               failure: true
