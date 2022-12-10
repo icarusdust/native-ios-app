@@ -58,13 +58,13 @@ workflows:
       scripts:
 #         - name: 
 #           script: |
-#              rm -rf /Applications/Xcode.app
+#          rm -rf /Applications/Xcode.app
 #          swift package init
 #          xcodebuild -resolvePackageDependencies
 #          echo $CM_BUILD_DIR
-#         - name: Pod inst
-#           script: |
-#               pod install
+        - name: Pod inst
+          script: |
+              pod install
 #         - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
 #           script: |
 #             keychain initialize
