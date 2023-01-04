@@ -102,6 +102,9 @@ workflows:
 #             -sdk iphoneos build-for-testing
 #             cd ./build/ios_integ/Build/Products
 #             zip -r "ios_tests.zip" "Debug-iphoneos" "native-ios_iphoneos15.4-arm64.xctestrun"
+        - name: Set up code signing settings on Xcode project
+          script: |
+             xcode-project use-profiles
         - name: Build ipa for distribution
           script: |
             xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --archive-flags "-destination 'generic/platform=iOS'  CODE_SIGNING_REQUIRED=YES CODE_SIGNING_ALLOWED=NO"
