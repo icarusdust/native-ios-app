@@ -46,15 +46,15 @@ workflows:
            cache_paths:
                - $HOME/Library/Caches/CocoaPods
          
-      triggering:
-        events:
-          - push
-      when:
-          changeset:
-#             includes:
-#               - 'scripts'
-            excludes:
-              - '**/*.md'
+#       triggering:
+#         events:
+#           - push
+#       when:
+#           changeset:
+# #             includes:
+# #               - 'scripts'
+#             excludes:
+#               - '**/*.md'
       scripts:
 #         - name: 
 #           script: |
@@ -80,12 +80,12 @@ workflows:
 #              git tag "test444"
 #              git push "https://icarusdust:${ACCESS_TOKEN}@github.com/icarusdust/native-ios-app.git" --tags 
  
-        - name: Set up code signing settings on Xcode project
-          script: |
-            echo $Venus
-            echo $Mars
-            xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
-            echo "UNITY_BIN=line_one\nline_two" >> $CM_ENV
+#         - name: Set up code signing settings on Xcode project
+#           script: |
+#             echo $Venus
+#             echo $Mars
+#             xcode-project use-profiles --custom-export-options='{"uploadBitcode": false, "uploadSymbols": false}'
+#             echo "UNITY_BIN=line_one\nline_two" >> $CM_ENV
 #         - name: Increment build number
 #           script: |
 #             #!/bin/sh
@@ -134,7 +134,7 @@ workflows:
         - /tmp/xcodebuild_logs/*.log
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         - /Users/builder/clone/build/ios_integ/Build/Products/ios_tests.zip
-      publishing:
+#       publishing:
 #        scripts:
 #          - name: Status check
 #            script: |
@@ -143,9 +143,9 @@ workflows:
 #                 else
 #                   echo "Failure"
 #                 fi
-          email:
-            recipients:
-              - nihal@nevercode.io
+#           email:
+#             recipients:
+#               - nihal@nevercode.io
 #             notify:
 #               success: true
 #               failure: true
